@@ -1,7 +1,7 @@
-resource "ec2_instance" "vm" {
+resource "aws_instance" "vm" {
     ami = "ami-090252cbe067a9e58"
-    instnace_type = "t3.micro"
-    vpc_security_group_ids = ""
+    instance_type = "t3.micro"
+    vpc_security_group_ids = ["aws_security_groups.allow_sg.id"]
 
     tags = {
         name = "HEMA"
