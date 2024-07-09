@@ -1,6 +1,6 @@
 resource "aws_instance" "DB" {
-    ami = "ami-041e2ea9402c46c32"
-    instance_type = "t3.micro"
+    ami = var.ami_id
+    instance_type = var.instance_type
     vpc_security_group_ids = [aws_security_group.allow_sg.id]
 
     tags = {
@@ -13,8 +13,8 @@ resource "aws_security_group" "allow_sg" {
     description = "allowing ssh"
  
  ingress {
-        to_port = 22
-        from_port = 22
+        to_port = var.to_port
+        from_port = var.from_port
         protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
  }
