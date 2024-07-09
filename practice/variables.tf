@@ -12,3 +12,6 @@ variable "to_port" {
 variable "from_port" {
     default =22
 }
+variable "instance_comdition" {
+    default = "db"
+}

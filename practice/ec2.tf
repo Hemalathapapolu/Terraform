@@ -1,6 +1,6 @@
 resource "aws_instance" "DB" {
     ami = var.ami_id
-    instance_type = var.instance_type
+    instance_type = var.instance_comdition == "db" ? "t3.small" : "t3.micro"
     vpc_security_group_ids = [aws_security_group.allow_sg.id]
 
     tags = {
