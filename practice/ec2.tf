@@ -1,14 +1,14 @@
 resource "aws_instance" "vm" {
-    ami = "ami-090252cbe067a9e58"
+    ami = "ami-041e2ea9402c46c32"
     instance_type = "t3.micro"
-    vpc_security_group_ids = ["aws_security_groups.allow_sg.id"]
+    vpc_security_group_ids = ["aws_security_group.allow_sg.id"]
 
     tags = {
         name = "HEMA"
     }
 }
 
-resource "aws_security_groups" "allow_sg" {
+resource "aws_security_group" "allow_sg" {
     name = "allow_sg"
     description = "allowing ssh"
  
