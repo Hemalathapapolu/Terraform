@@ -12,7 +12,7 @@ variable "to_port" {
 variable "from_port" {
     default =22
 }
-variable "instance_comdition" {
+variable "instance_condition" {
     default = "db"
 }
 variable "instance_name" {
@@ -25,4 +25,7 @@ variable "comm_tags" {
         project = "expence"
         terraform = "true"
     }
+}
+variable "domain_name" {
+    default = "devopps.online"
 }
